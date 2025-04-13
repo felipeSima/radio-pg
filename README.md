@@ -2,7 +2,7 @@
 
 RadioPG é uma aplicação web desenvolvida para mestres de RPG que desejam criar ambientes sonoros imersivos para suas sessões de jogo. Com uma interface intuitiva e recursos poderosos, o RadioPG permite mixar diferentes faixas de áudio para criar a atmosfera perfeita para cada momento da sua aventura.
 
-![RadioPG Screenshot](https://via.placeholder.com/800x400?text=RadioPG+Screenshot)
+<img width="1497" alt="Captura de Tela 2025-04-13 às 18 25 57" src="https://github.com/user-attachments/assets/4782316f-599f-44b2-9824-99b64ee8d152" />
 
 ## Funcionalidades
 
