@@ -6,6 +6,7 @@ interface TrackControlProps {
   onTogglePlay: (id: string) => void;
   onVolumeChange: (id: string, volume: number) => void;
   onRemove: (id: string) => void;
+  className?: string;
 }
 
 const TrackControl: React.FC<TrackControlProps> = ({
@@ -13,6 +14,7 @@ const TrackControl: React.FC<TrackControlProps> = ({
   onTogglePlay,
   onVolumeChange,
   onRemove,
+  className = '',
 }) => {
   const getCategoryIcon = (category: string) => {
     switch (category) {
@@ -32,15 +34,15 @@ const TrackControl: React.FC<TrackControlProps> = ({
   const getCategoryColor = (category: string) => {
     switch (category) {
       case 'mystery':
-        return 'bg-purple-700';
+        return 'from-primary to-primary-dark border-primary/30';
       case 'wilderness':
-        return 'bg-green-700';
+        return 'from-emerald to-emerald-dark border-emerald/30';
       case 'combat':
-        return 'bg-red-700';
+        return 'from-red-700 to-red-900 border-red-700/30';
       case 'social':
-        return 'bg-yellow-700';
+        return 'from-accent to-accent-dark border-accent/30';
       default:
-        return 'bg-blue-700';
+        return 'from-blue-700 to-blue-900 border-blue-700/30';
     }
   };
 
@@ -49,43 +51,55 @@ const TrackControl: React.FC<TrackControlProps> = ({
   };
 
   return (
-    <div className={`p-4 rounded-lg mb-3 ${getCategoryColor(track.category)} transition-all ${track.isPlaying ? 'opacity-100' : 'opacity-70'}`}>
+    <div className={`p-5 rounded-lg mb-4 bg-gradient-to-br ${getCategoryColor(track.category)} border border-opacity-10 shadow-lg backdrop-blur-xs transition-all duration-300 ${track.isPlaying ? 'opacity-100 shadow-lg' : 'opacity-80'} ${className}`}>
       <div className="flex items-center justify-between">
         <div className="flex items-center">
-          <span className="text-2xl mr-3">{getCategoryIcon(track.category)}</span>
+          <div className="w-10 h-10 rounded-full bg-black bg-opacity-20 flex items-center justify-center mr-3 shadow-inner text-xl">
+            {getCategoryIcon(track.category)}
+          </div>
           <div>
-            <h3 className="font-medieval text-lg font-bold text-white">{track.title}</h3>
-            <p className="text-xs text-gray-200 capitalize">{track.category}</p>
+            <h3 className="font-title text-lg font-semibold text-white text-shadow-sm">{track.title}</h3>
+            <p className="text-xs text-gray-200 capitalize font-body">{track.category}</p>
           </div>
         </div>
-        <div className="flex items-center space-x-2">
+        <div className="flex items-center space-x-3">
           <button
             onClick={() => onTogglePlay(track.id)}
-            className="w-10 h-10 rounded-full bg-white bg-opacity-20 flex items-center justify-center hover:bg-opacity-30 transition-all"
+            className={`w-12 h-12 rounded-full flex items-center justify-center transition-all duration-300 ${track.isPlaying ? 'bg-black bg-opacity-30 outer-glow' : 'bg-black bg-opacity-20 hover:bg-opacity-30'}`}
             aria-label={track.isPlaying ? 'Pausar' : 'Reproduzir'}
           >
             {track.isPlaying ? (
-              <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
-                <path fillRule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zM7 8a1 1 0 012 0v4a1 1 0 11-2 0V8zm5-1a1 1 0 00-1 1v4a1 1 0 102 0V8a1 1 0 00-1-1z" clipRule="evenodd" />
+              <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                <circle cx="12" cy="12" r="10" />
+                <line x1="10" y1="15" x2="10" y2="9" />
+                <line x1="14" y1="15" x2="14" y2="9" />
               </svg>
             ) : (
-              <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
-                <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM9.555 7.168A1 1 0 008 8v4a1 1 0 001.555.832l3-2a1 1 0 000-1.664l-3-2z" clipRule="evenodd" />
+              <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                <circle cx="12" cy="12" r="10" />
+                <polygon points="10 8 16 12 10 16 10 8" />
               </svg>
             )}
           </button>
           <button
             onClick={() => onRemove(track.id)}
-            className="w-8 h-8 rounded-full bg-white bg-opacity-10 flex items-center justify-center hover:bg-opacity-20 transition-all"
+            className="w-9 h-9 rounded-full bg-black bg-opacity-20 flex items-center justify-center hover:bg-opacity-40 transition-all hover:text-red-400"
             aria-label="Remover"
           >
-            <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4" viewBox="0 0 20 20" fill="currentColor">
-              <path fillRule="evenodd" d="M9 2a1 1 0 00-.894.553L7.382 4H4a1 1 0 000 2v10a2 2 0 002 2h8a2 2 0 002-2V6a1 1 0 100-2h-3.382l-.724-1.447A1 1 0 0011 2H9zM7 8a1 1 0 012 0v6a1 1 0 11-2 0V8zm5 0a1 1 0 012 0v6a1 1 0 11-2 0V8z" clipRule="evenodd" />
+            <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+              <path d="M3 6h18" />
+              <path d="M19 6v14a2 2 0 01-2 2H7a2 2 0 01-2-2V6m3 0V4a2 2 0 012-2h4a2 2 0 012 2v2" />
+              <path d="M10 11v6" />
+              <path d="M14 11v6" />
             </svg>
           </button>
         </div>
       </div>
-      <div className="mt-3">
+      <div className="mt-4 px-2">
+        <div className="flex items-center justify-between mb-1">
+          <span className="text-xs text-gray-300 font-body">Volume</span>
+          <span className="text-xs text-gray-300 font-body">{Math.round(track.volume * 100)}%</span>
+        </div>
         <input
           type="range"
           min="0"
@@ -93,7 +107,7 @@ const TrackControl: React.FC<TrackControlProps> = ({
           step="0.01"
           value={track.volume}
           onChange={handleVolumeChange}
-          className="slider"
+          className="slider w-full"
           disabled={!track.isPlaying}
         />
       </div>

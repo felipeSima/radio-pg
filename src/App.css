@@ -1,4 +1,29 @@
-/* Estilos personalizados para o RadioPG */
+/* Estilos personalizados para o RadioPG - Design System RPG Narrativo */
+@import './fonts.css';
+
+/* Estilos globais */
+body {
+  background-color: #0A0A0A;
+  color: #E5E5E5;
+  font-family: 'Inter', 'Open Sans', sans-serif;
+  background-image: radial-gradient(circle at 10% 20%, rgba(30, 30, 30, 0.2) 0%, rgba(10, 10, 10, 0.5) 90%);
+}
+
+/* Efeitos de profundidade e mistério */
+.glass-panel {
+  background: rgba(26, 26, 26, 0.7);
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(212, 175, 55, 0.1);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.5);
+}
+
+.inner-glow {
+  box-shadow: inset 0 0 8px rgba(212, 175, 55, 0.3);
+}
+
+.outer-glow {
+  box-shadow: 0 0 15px rgba(212, 175, 55, 0.2);
+}
 
 /* Estilização dos controles de volume */
 input[type="range"] {
@@ -6,45 +31,146 @@ input[type="range"] {
   appearance: none;
   height: 8px;
   border-radius: 5px;
-  background: #4B5563;
+  background: rgba(30, 30, 30, 0.8);
   outline: none;
-  opacity: 0.7;
-  transition: opacity 0.2s;
+  opacity: 0.8;
+  transition: all 0.3s ease;
+  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.4);
 }
 
 input[type="range"]:hover {
   opacity: 1;
+  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.6), 0 0 5px rgba(212, 175, 55, 0.3);
 }
 
 input[type="range"]::-webkit-slider-thumb {
   -webkit-appearance: none;
   appearance: none;
-  width: 18px;
-  height: 18px;
+  width: 20px;
+  height: 20px;
   border-radius: 50%;
-  background: #F59E0B;
+  background: linear-gradient(145deg, #D4AF37, #AA8C2C);
   cursor: pointer;
-  transition: all 0.2s;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
 }
 
 input[type="range"]::-webkit-slider-thumb:hover {
-  background: #D97706;
+  background: linear-gradient(145deg, #F1C40F, #D4AF37);
   transform: scale(1.1);
+  box-shadow: 0 0 10px rgba(212, 175, 55, 0.5);
+}
+
+/* Botões estilizados */
+.btn-fantasy {
+  background: linear-gradient(to bottom, rgba(93, 63, 211, 0.9), rgba(58, 30, 120, 0.9));
+  border: 1px solid rgba(123, 104, 238, 0.3);
+  color: #FFFFFF;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3), inset 0 1px 0 rgba(255, 255, 255, 0.1);
+}
+
+.btn-fantasy:hover {
+  background: linear-gradient(to bottom, rgba(123, 104, 238, 0.9), rgba(93, 63, 211, 0.9));
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.2), 0 0 10px rgba(93, 63, 211, 0.4);
+  transform: translateY(-1px);
+}
+
+.btn-gold {
+  background: linear-gradient(to bottom, rgba(212, 175, 55, 0.9), rgba(170, 140, 44, 0.9));
+  border: 1px solid rgba(241, 196, 15, 0.3);
+  color: #121212;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3), inset 0 1px 0 rgba(255, 255, 255, 0.2);
+}
+
+.btn-gold:hover {
+  background: linear-gradient(to bottom, rgba(241, 196, 15, 0.9), rgba(212, 175, 55, 0.9));
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.3), 0 0 10px rgba(212, 175, 55, 0.5);
+  transform: translateY(-1px);
 }
 
 /* Animações */
 @keyframes pulse {
   0% {
     transform: scale(1);
+    box-shadow: 0 0 5px rgba(212, 175, 55, 0.2);
   }
   50% {
-    transform: scale(1.05);
+    transform: scale(1.03);
+    box-shadow: 0 0 15px rgba(212, 175, 55, 0.4);
   }
   100% {
     transform: scale(1);
+    box-shadow: 0 0 5px rgba(212, 175, 55, 0.2);
   }
 }
 
 .animate-pulse {
-  animation: pulse 2s infinite;
+  animation: pulse 3s infinite;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.fade-in {
+  animation: fadeIn 0.5s ease-out forwards;
+}
+
+/* Efeitos de névoa e sombras */
+.fog-overlay {
+  position: relative;
+  overflow: hidden;
+}
+
+.fog-overlay::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg, rgba(93, 63, 211, 0.05) 0%, rgba(10, 10, 10, 0) 40%, rgba(212, 175, 55, 0.05) 100%);
+  pointer-events: none;
+  animation: fogMove 120s infinite alternate linear;
+}
+
+@keyframes fogMove {
+  0% { background-position: 0% 0%; }
+  100% { background-position: 100% 100%; }
+}
+
+/* Estilização de texto */
+.text-shadow-sm {
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+.text-shadow-lg {
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.7);
+}
+
+.text-glow {
+  text-shadow: 0 0 5px rgba(212, 175, 55, 0.5);
+}
+
+/* Scrollbar personalizada */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(26, 26, 26, 0.7);
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(93, 63, 211, 0.7);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(123, 104, 238, 0.8);
 }
