@@ -1,46 +1,77 @@
-# Getting Started with Create React App
+## Ambientação Sonora para RPG
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+RadioPG é uma aplicação web desenvolvida para mestres de RPG que desejam criar ambientes sonoros imersivos para suas sessões de jogo. Com uma interface intuitiva e recursos poderosos, o RadioPG permite mixar diferentes faixas de áudio para criar a atmosfera perfeita para cada momento da sua aventura.
 
-## Available Scripts
+![RadioPG Screenshot](https://via.placeholder.com/800x400?text=RadioPG+Screenshot)
 
-In the project directory, you can run:
+## ✨ Funcionalidades
 
-### `npm start`
+- **Mixer de Áudio**: Reproduza múltiplas faixas simultaneamente com controle individual de volume
+- **Categorização**: Organize suas faixas por categorias (Ambiente, Combate, Cidade, etc.)
+- **Ambientes Salvos**: Salve e carregue combinações de áudio para uso rápido durante suas sessões
+- **Compartilhamento**: Compartilhe seus ambientes sonoros com seus jogadores através de URLs únicas
+- **Web Audio API**: Geração de sons diretamente no navegador quando não há arquivos de áudio disponíveis
+- **Interface Responsiva**: Funciona em desktops, tablets e smartphones
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## 🚀 Começando
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+### Pré-requisitos
 
-### `npm test`
+- Node.js (versão 16 ou superior)
+- npm ou yarn
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### Instalação
 
-### `npm run build`
+```bash
+# Clone o repositório
+git clone https://github.com/seu-usuario/radio-pg.git
+cd radio-pg
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+# Instale as dependências
+npm install
+# ou
+yarn install
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+# Inicie o servidor de desenvolvimento
+npm start
+# ou
+yarn start
+```
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+A aplicação estará disponível em [http://localhost:3000](http://localhost:3000).
 
-### `npm run eject`
+## 🛠️ Tecnologias
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+- [React](https://reactjs.org/) - Biblioteca JavaScript para construção de interfaces
+- [TypeScript](https://www.typescriptlang.org/) - Superset tipado de JavaScript
+- [Web Audio API](https://developer.mozilla.org/en-US/docs/Web/API/Web_Audio_API) - API para processamento e síntese de áudio
+- [TailwindCSS](https://tailwindcss.com/) - Framework CSS para design responsivo
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## 📖 Como Usar
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+1. **Adicione Faixas**: Use o formulário para adicionar novas faixas de áudio (URL ou geração via Web Audio API)
+2. **Crie Seu Mix**: Reproduza múltiplas faixas simultaneamente e ajuste o volume de cada uma
+3. **Salve Ambientes**: Salve suas combinações favoritas para uso futuro
+4. **Filtre por Categoria**: Use o seletor de categorias para encontrar rapidamente o tipo de som que precisa
+5. **Compartilhe**: Envie o link do seu ambiente para seus jogadores sincronizarem a experiência
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+## 🤝 Contribuindo
 
-## Learn More
+Contribuições são bem-vindas! Sinta-se à vontade para abrir issues e pull requests.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+1. Faça um fork do projeto
+2. Crie sua branch de feature (`git checkout -b feature/AmazingFeature`)
+3. Commit suas mudanças (`git commit -m 'Add some AmazingFeature'`)
+4. Push para a branch (`git push origin feature/AmazingFeature`)
+5. Abra um Pull Request
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+## 📝 Licença
+
+Este projeto está licenciado sob a Licença MIT - veja o arquivo [LICENSE](LICENSE) para detalhes.
+
+## 📧 Contato
+
+Seu Nome - [@seu_twitter](https://twitter.com/seu_twitter) - email@exemplo.com
+
+Link do Projeto: [https://github.com/seu-usuario/radio-pg](https://github.com/seu-usuario/radio-pg)
+EOL
