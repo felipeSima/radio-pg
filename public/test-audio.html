@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Teste de Áudio</title>
+</head>
+<body>
+    <h1>Teste de Áudio</h1>
+    <button id="playButton">Reproduzir Áudio</button>
+    <audio id="audioPlayer" controls>
+        <source src="/audio/mystery-5.mp3" type="audio/mpeg">
+        Seu navegador não suporta o elemento de áudio.
+    </audio>
+    
+    <script>
+        document.getElementById('playButton').addEventListener('click', function() {
+            const audio = document.getElementById('audioPlayer');
+            audio.volume = 1.0; // Volume máximo
+            audio.play().catch(error => {
+                console.error('Erro ao reproduzir áudio:', error);
+                alert('Erro ao reproduzir áudio: ' + error.message);
+            });
+        });
+    </script>
+</body>
+</html>
