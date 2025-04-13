@@ -4,7 +4,7 @@ RadioPG é uma aplicação web desenvolvida para mestres de RPG que desejam cria
 
 ![RadioPG Screenshot](https://via.placeholder.com/800x400?text=RadioPG+Screenshot)
 
-## ✨ Funcionalidades
+## Funcionalidades
 
 - **Mixer de Áudio**: Reproduza múltiplas faixas simultaneamente com controle individual de volume
 - **Categorização**: Organize suas faixas por categorias (Ambiente, Combate, Cidade, etc.)
@@ -13,7 +13,7 @@ RadioPG é uma aplicação web desenvolvida para mestres de RPG que desejam cria
 - **Web Audio API**: Geração de sons diretamente no navegador quando não há arquivos de áudio disponíveis
 - **Interface Responsiva**: Funciona em desktops, tablets e smartphones
 
-## 🚀 Começando
+## Começando
 
 ### Pré-requisitos
 
@@ -40,14 +40,14 @@ yarn start
 
 A aplicação estará disponível em [http://localhost:3000](http://localhost:3000).
 
-## 🛠️ Tecnologias
+## Tecnologias
 
 - [React](https://reactjs.org/) - Biblioteca JavaScript para construção de interfaces
 - [TypeScript](https://www.typescriptlang.org/) - Superset tipado de JavaScript
 - [Web Audio API](https://developer.mozilla.org/en-US/docs/Web/API/Web_Audio_API) - API para processamento e síntese de áudio
 - [TailwindCSS](https://tailwindcss.com/) - Framework CSS para design responsivo
 
-## 📖 Como Usar
+## Como Usar
 
 1. **Adicione Faixas**: Use o formulário para adicionar novas faixas de áudio (URL ou geração via Web Audio API)
 2. **Crie Seu Mix**: Reproduza múltiplas faixas simultaneamente e ajuste o volume de cada uma
@@ -55,7 +55,7 @@ A aplicação estará disponível em [http://localhost:3000](http://localhost:30
 4. **Filtre por Categoria**: Use o seletor de categorias para encontrar rapidamente o tipo de som que precisa
 5. **Compartilhe**: Envie o link do seu ambiente para seus jogadores sincronizarem a experiência
 
-## 🤝 Contribuindo
+## Contribuindo
 
 Contribuições são bem-vindas! Sinta-se à vontade para abrir issues e pull requests.
 
@@ -65,13 +65,13 @@ Contribuições são bem-vindas! Sinta-se à vontade para abrir issues e pull re
 4. Push para a branch (`git push origin feature/AmazingFeature`)
 5. Abra um Pull Request
 
-## 📝 Licença
+## Licença
 
 Este projeto está licenciado sob a Licença MIT - veja o arquivo [LICENSE](LICENSE) para detalhes.
 
 ## 📧 Contato
 
-Seu Nome - [@seu_twitter](https://twitter.com/seu_twitter) - email@exemplo.com
+Seu Nome - [@falekito](https://x.com/falekito) - felipe.alexandre.sima@gmail.com
 
 Link do Projeto: [https://github.com/seu-usuario/radio-pg](https://github.com/seu-usuario/radio-pg)
 EOL
